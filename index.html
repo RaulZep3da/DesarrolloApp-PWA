@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title> Pagina </title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="manifest" href="/manifest.json">
+
+    <!-- Script para mostrar las coordenadas-->
+		<script type="text/javascript">
+			if (navigator.geolocation) { //Validar si hay acceso web a la ubicación
+				navigator.geolocation.getCurrentPosition(mostrarUbicacion); //Obtiene la posición
+				} else {
+				alert("¡Error! Este navegador no soporta la Geolocalización.");
+			}
+			
+			//Funcion para obtener latitud y longitud
+			function mostrarUbicacion(position) {
+				var latitud = position.coords.latitude; //Obtener latitud
+				var longitud = position.coords.longitude; //Obtener longitud
+				var div = document.getElementById("coordenadas");
+				div.innerHTML = "<br>Latitud: " + latitud + "<br>Longitud: " + longitud; //Imprime latitud y longitud
+			}		
+		</script>
+
+</head>
+
+<body>
+	<div class="titulo">
+		<h1>Ingenieria en Sistemas Computacionales. TESOEM</h1>
+	</div>
+
+
+	<div id='coordenadas'></div>
+
+	<div class="cabecera">
+		<img src="TESOEM.png">
+		<p>
+			Objetivos: Formar profesionistas de manera integral con capacidad analítica, crítica, creativa y de liderazgo que aporten soluciones computacionales en las organizaciones, aplicando las tecnologías de información y de las comunicaciones, comprometidos con su entorno.
+		</p>
+	</div>
+
+	<div class="cuerpo">
+		<p>
+			Perfil del Egresado: 
+
+El ingeniero en sistemas computacionales es el profesional capacitado para:
+
+    Analizar, desarrollar y programar modelos matemáticos, estadísticos y de simulación.
+    Reconocer y guiarse por los aspectos sociales, profesionales y éticos en su entorno.
+    Dirigir y coordinar equipos de trabajo multi e interdisciplinarios.
+    Coordinar y realizar investigaciones que fortalezcan el desarrollo cultural, científico y tecnológico.
+    Aplicar nuevas tecnologías a la solución de problemas de su entorno laboral.
+    Desarrollar y administrar sistemas de información, redes de computadoras y aplicaciones distribuidas.
+		</p>
+	</div>
+
+    <div class="pie">
+		<p>
+			Campo Laboral: 
+El mundo de hoy es un mundo construido a base de la información, dado esto, el ISC es capaz de integrarse al campo laboral en cualquier área de empresas públicas o privadas en donde se haga uso intenso de la información, sea necesario administrarla o automatizar los procesos necesarios que permitan una integridad constante segura y eficiente.
+		</p>
+	</div>
+
+	<script src="/app.js"></script>
+</body>
+</html> 
